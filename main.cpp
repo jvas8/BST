@@ -78,4 +78,21 @@ bool searchIterative(BSTNode* root, int key) {
 }
 
 
+void inorderPrint(BSTNode* root) {
+    if(!root) {
+        return;
+    }
+    inorderPrint(root->left);
+    cout << root->data << " ";
+    inorderPrint(root->right);
+}
+
+void freeTree(BSTNode* root) {
+    if(!root) {
+        return;
+    }
+    freeTree(root->left);
+    freeTree(root->right);
+    delete root;
+}
 
