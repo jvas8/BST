@@ -76,6 +76,17 @@ bool searchIterative(BSTNode* root, int key) {
     }
     return false;
 }
+BSTNode* minValueNode(BSTNode* root) {
+    if (root == nullptr) {
+        return nullptr;
+    }
+    
+    BSTNode* cur = root;
+    while (cur->left) { 
+        cur = cur->left;
+    }
+    return cur;
+}
 
 
 void inorderPrint(BSTNode* root) {
